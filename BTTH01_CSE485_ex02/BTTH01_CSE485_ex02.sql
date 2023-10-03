@@ -41,7 +41,7 @@ CREATE TABLE 'baiviet'(
 	'tomtat' TEXT NOT NULL;
 	'noidung' TEXT;
 	'ma_tgia' INT UNSIGNED NOT NULL;
-	'ngayviet' DATETIME NOT NULL;
+	'ngayviet' DATETIME NOT NULL current_timestamp();
 	'hinhanh' VARCHAR(200) COLLATE utf8_unicode_ci ;
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
