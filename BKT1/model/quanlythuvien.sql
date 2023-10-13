@@ -1,0 +1,18 @@
+CREATE DATABASE IF NOT EXISTS QuanLyThuVien;
+
+USE QuanLyThuVien;
+
+-- Tạo bảng TacGia
+CREATE TABLE IF NOT EXISTS tacgia (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  tenTacGia VARCHAR(255)
+);
+
+-- Tạo bảng Sach
+CREATE TABLE IF NOT EXISTS sach (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  tenSach VARCHAR(255),
+  namXuatBan INT,
+  idTacGia INT,
+  FOREIGN KEY (idTacGia) REFERENCES TacGia(id)
+);

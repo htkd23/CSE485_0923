@@ -9,7 +9,7 @@
 </head>
 <body>
     <?php
-        include "layer_admin/header_ad.php";
+        include "admin/header.php";
         try{
             $conn = new PDO("mysql:host=localhost;dbname=btth01_cse485","root","");
             $sql = "SELECT * FROM theloai_data";
@@ -23,7 +23,7 @@
         if (!empty($conn)) {
         ?>
     <div class="container">
-    <a href="add_category.php"> <button type="submit" class="btn btn-success mt-5">Thêm mới</button></a>
+    <a href="category_add.php"> <button type="submit" class="btn btn-success mt-5">Thêm mới</button></a>
     <table class="table mt-4">
         <thead>
             <tr>
@@ -40,9 +40,9 @@
             <tr>
             <th scope="row"><?php echo $theloai['ma_tloai'];?></th>
             <td><?php echo $theloai['ten_tloai'];?></td>
-            <td><a href="edit_category.php"><i class="bi bi-pencil-square"></i></a></td>
+            <td><a href="category_edit.php"><i class="bi bi-pencil-square"></i></a></td>
             <td><a href=""><i class="bi bi-trash-fill"></i></a></td>
-            <td><a href="edit_category.php?id=<?php echo $theloai['ma_tloai']; ?>"><i class="bi bi-pencil-square"></i></a></td>
+            <td><a href="category_edit.php?id=<?php echo $theloai['ma_tloai']; ?>"><i class="bi bi-pencil-square"></i></a></td>
             <td><a href="delete.php?id=<?php echo $theloai['ma_tloai']; ?>"><i class="bi bi-trash-fill"></i></a></td>
             </tr>
             <?php }
@@ -53,7 +53,7 @@
     <?php
         }
         else echo "Loi ket noi";
-        include "layer_admin/footer_ad.php";
+        include "admin/footer.php";
         ?>
 </body>
 </html>
